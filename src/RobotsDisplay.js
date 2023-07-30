@@ -14,7 +14,7 @@ export default function RobotsDisplay ({displays, setFavoriteBots, favoriteBots}
     setFavoriteBots(
       [...favoriteBots, selectedBot]
     )
-    console.log(selectedBot)
+    
   }
     return (
       <div key={display.id} className = "card col-2 m-1"  >   
