@@ -1,5 +1,5 @@
-export default function FavoriteRobot({favoriteBots, displays}){
- const header = <div> <h3>Click on 'Add to Army' to Recruit</h3></div>
+export default function ArmyRobot({favoriteBots, displays}){
+ const header = <div> <h3>Welcome to the Army Soldier</h3></div>
   const armyBot = favoriteBots.map((favoriteBot, index) => {
     
     //delete robot from server

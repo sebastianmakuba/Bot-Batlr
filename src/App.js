@@ -1,6 +1,6 @@
 import './App.css';
 import { useState , useEffect} from 'react';
-import FavoriteRobot from './FavoriteRobot';
+import ArmyRobot from './ArmyRobot';
 import RobotsDisplay from './RobotsDisplay';
 function App() {
   const [displays, setDisplays] = useState ([])
@@ -14,7 +14,7 @@ function App() {
   
   return (
     <div >
-      <FavoriteRobot displays = {displays} favoriteBots={favoriteBots} setFavoriteBots = {setFavoriteBots}/>
+      <ArmyRobot displays = {displays} favoriteBots={favoriteBots} setFavoriteBots = {setFavoriteBots}/>
       <RobotsDisplay 
       displays = {displays} 
       setDisplays = {setDisplays} 
