@@ -1,9 +1,7 @@
 
-export default function RobotsDisplay ({displays}){
+export default function RobotsDisplay ({displays, addToFavorites}){
 
-function addToFavorites (event){
-  console.log(event.target.id)
-}
+
 
 const robots = displays.map((display) => 
 <div key={display.id} className = "card col-2 m-1"  >   
@@ -12,10 +10,10 @@ const robots = displays.map((display) =>
     <h5 className ="card-title">Name : {display.name}</h5>
     <p className ="card-text">{display.catchphrase}</p>
      <div className="card-footer">
-   <small className="text-body-secondary">Health : {display.health}  Damage : {display.damage};  Armor : {display.armor}   </small>
+   <small className="text-body-secondary">Health : {display.health}  Damage : {display.damage};  Armor : {display.armor} Class : {display.bot_class} </small>
+  </div>
   </div>
   <button className="btn btn-success" id={display.id} onClick={addToFavorites} >Add to Favorites</button>
-  </div>
 </div>
  
 
