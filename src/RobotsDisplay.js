@@ -1,19 +1,37 @@
 
 
 export default function RobotsDisplay ({displays, setFavoriteBots, favoriteBots}){
-
-
   const robots = displays.map((display) => {
    
   function addToArmy (e) {
-      
+    const selectedBotId = parseInt(e.target.id)
     
-      const selectedBot = displays.find((display) => {
-        return  display.id === parseInt(e.target.id)        
-    })
-    setFavoriteBots(
-      [...favoriteBots, selectedBot]
-    )
+    let isAlreadyEnlisted = false;
+    for (const bot of favoriteBots) {
+      if (bot.id === selectedBotId) {
+        isAlreadyEnlisted = true;
+        break;
+      }
+    }
+
+    if (!isAlreadyEnlisted) {
+      // Find the selected bot object from the displays array
+      const selectedBot = displays.find(display => display.id === selectedBotId);
+
+      // Update the favoriteBots list by adding the selected bot
+      setFavoriteBots([...favoriteBots, selectedBot]);
+    } else {
+      alert('Bot already enlisted. PLease pick another one');
+    }
+
+    //   const selectedBot = displays.find((display) => {
+
+
+    //     // return  display.id === parseInt(e.target.id)        
+    // })
+    // setFavoriteBots(
+    //   [...favoriteBots, selectedBot]
+    // )
     
   }
     return (
