@@ -14,7 +14,7 @@ function App() {
   
   return (
     <div >
-      <ArmyRobot displays = {displays} favoriteBots={favoriteBots} setFavoriteBots = {setFavoriteBots}/>
+      <ArmyRobot favoriteBots={favoriteBots} />
       <RobotsDisplay 
       displays = {displays} 
       setDisplays = {setDisplays} 
