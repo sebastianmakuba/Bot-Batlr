@@ -1,16 +1,21 @@
 
-export default function RobotsDisplay ({displays, setFavoriteBots}){
+
+export default function RobotsDisplay ({displays, setFavoriteBots, favoriteBots}){
 
 
   const robots = displays.map((display) => {
    
   function addToArmy (e) {
       
-      const selectedBot = displays.find((display) => parseInt(display.id === e.target.id))
-        parseInt(console.log(selectedBot))
-    }
-
-
+    
+      const selectedBot = displays.find((display) => {
+        return  display.id === parseInt(e.target.id)        
+    })
+    setFavoriteBots(
+      [...favoriteBots, selectedBot]
+    )
+    console.log(selectedBot)
+  }
     return (
       <div key={display.id} className = "card col-2 m-1"  >   
        <img src = {display.avatar_url} className ="card-img-top" alt = {display.name}/>
@@ -24,9 +29,9 @@ export default function RobotsDisplay ({displays, setFavoriteBots}){
         <button className="btn btn-success" id={display.id} onClick={addToArmy} >Add to my Army</button>
       </div>
     )
-  }
   
-  )
+  
+})
     return (
         <div className="row">
             {robots}

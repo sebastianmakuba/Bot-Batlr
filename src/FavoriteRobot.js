@@ -1,20 +1,26 @@
-export default function FavoriteRobot({displays, favoriteBots, SetFavoriteBots}){
- 
-  const armyBot = 
-    <div>     
-        <div className="card col-2" >
-            <img src="..." className="card-img-top" alt="..."/>
-                <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
-  <button className="btn btn-danger" >Remove From Favorites</button>
-    </div>
+export default function FavoriteRobot({favoriteBots}){
 
+
+   const header = <div> <h3>Click on 'Add to Army' to Recruit</h3></div>
+  const armyBot = favoriteBots.map((favoriteBot) => 
+  <div key={favoriteBot.id} className = "card col-2 m-1"  >   
+  <img src = {favoriteBot.avatar_url} className ="card-img-top" alt = {favoriteBot.name}/>
+   <div className ="card-body">
+     <h5 className ="card-title">Name : {favoriteBot.name}</h5>
+       <p className ="card-text">{favoriteBot.catchphrase}</p>
+           <div className="card-footer">
+         <small className="text-body-secondary">Health : {favoriteBot.health}  Damage : {favoriteBot.damage};  Armor : {favoriteBot.armor} Class : {favoriteBot.bot_class} </small>
+       </div>
+     </div>
+   <button className="btn btn-danger" id={favoriteBot.id} onClick={deleteRobot}>Remove from my Army</button>
+ </div>
+
+  )
+    
     
     return (
        <div className="row">
+        {header}
        {armyBot}     
        </div>
     )
