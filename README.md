@@ -21,4 +21,4 @@ This component is responsible for displaying all the robots available in the ser
 This component has all the robots enlisted for the army. It also has a functionality that allows us to permanently delete a robot from the server.
 
 
-Author : Sebastian Makuba
+Author Name Sebastian Makuba
