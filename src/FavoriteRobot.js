@@ -1,9 +1,13 @@
+import React from "react"
 
-function FavoriteRobot(){
 
-
-    return 
-    <div>
-        
-    </div>
+export default function FavoriteRobot({displays}){
+ 
+console.log(displays)
+console.log("hello")
+    return (
+       <div>
+       <h1>hello</h1>     
+       </div>
+    )
 }
