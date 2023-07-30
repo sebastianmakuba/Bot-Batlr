@@ -18,6 +18,7 @@ function App() {
       <RobotsDisplay 
       displays = {displays} 
       setDisplays = {setDisplays} 
+      favoriteBots = {favoriteBots}
       setFavoriteBots = {setFavoriteBots}
       />
     </div>
