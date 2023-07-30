@@ -2,6 +2,7 @@ export default function FavoriteRobot({favoriteBots, displays}){
  const header = <div> <h3>Click on 'Add to Army' to Recruit</h3></div>
   const armyBot = favoriteBots.map((favoriteBot, index) => {
     
+    //delete robot from server
     function deleteRobot (){
         fetch (` http://localhost:3000/bots/${favoriteBot.id}`,{
         method : 'DELETE'
@@ -10,6 +11,7 @@ export default function FavoriteRobot({favoriteBots, displays}){
 
        
     }
+    //collection of favorite robots
     return (
         
   <div key={index} className = "card col-2 m-1"  >   

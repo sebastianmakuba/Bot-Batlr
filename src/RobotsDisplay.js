@@ -1,11 +1,9 @@
-
-
 export default function RobotsDisplay ({displays, setFavoriteBots, favoriteBots}){
   const robots = displays.map((display) => {
    
   function addToArmy (e) {
     const selectedBotId = parseInt(e.target.id)
-    
+    //to allow adding only once
     let isAlreadyEnlisted = false;
     for (const bot of favoriteBots) {
       if (bot.id === selectedBotId) {
@@ -23,17 +21,9 @@ export default function RobotsDisplay ({displays, setFavoriteBots, favoriteBots}
     } else {
       alert('Bot already enlisted. PLease pick another one');
     }
-
-    //   const selectedBot = displays.find((display) => {
-
-
-    //     // return  display.id === parseInt(e.target.id)        
-    // })
-    // setFavoriteBots(
-    //   [...favoriteBots, selectedBot]
-    // )
-    
+      
   }
+  //Entire collection of available robots
     return (
       <div key={display.id} className = "card col-2 m-1"  >   
        <img src = {display.avatar_url} className ="card-img-top" alt = {display.name}/>
