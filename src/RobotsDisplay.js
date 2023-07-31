@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function RobotsDisplay ({displays, setFavoriteBots, favoriteBots}){
   const robots = displays.map((display) => {
    

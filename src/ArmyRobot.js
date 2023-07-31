@@ -1,4 +1,6 @@
-export default function ArmyRobot({favoriteBots, displays}){
+import React from "react"
+
+export default function ArmyRobot({favoriteBots}){
  const header = <div> <h3>Welcome to the Army Soldier</h3></div>
   const armyBot = favoriteBots.map((favoriteBot, index) => {
     
